@@ -1,0 +1,31 @@
+
+<!--DEVOURED-->
+
+<ul style ="background-color: rgb(253, 219, 167); width: 300px; margin:auto; padding: 10px;">
+  {{#each allburgers}}
+    {{#unless devoured}}
+      {{id}}. {{burger_name}} <button class="eat-burger" data-id="{{id}}">DEVOUR!</button>
+   <br>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<!-- NOT DEVOURED-->
+<br><br>
+<ul style ="background-color: rgb(112, 112, 112); width: 300px; margin:auto; padding: 10px; ">
+    {{#each allburgers}}
+    {{#if devoured}}
+      {{id}}. {{burger_name}}
+      <br>
+    {{/if}}
+  {{/each}}
+</ul>
+<br><br>
+<div>
+  <form action="/api" method="POST">
+  	<textarea type="text" name="burger" style= "margin:auto;"></textarea>
+
+  	<button type="submit" style= "margin:auto;">Submit</button>
+  </form>
+</div>
+
